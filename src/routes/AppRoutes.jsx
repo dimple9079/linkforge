@@ -1,10 +1,11 @@
 import { BrowserRouter , Routes, Route } from "react-router-dom";
 
-import Landing from "./pages/Landing";
-import Login from "./pages/Login";
-import Dashboard  from "./pages/Dashboard";
-import Analytics from "./pages/Analytics";
-import URLShortner from "./pages/URLShortner";
+import Landing from "../pages/Landing";
+import Login from "../pages/Login";
+import Dashboard  from "../pages/Dashboard";
+import Analytics from "../pages/Analytics";
+import URLShortener from "../pages/URLShortener";
+import QRGenerator from "../pages/QRGenerator";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/analytics" element={<Analytics />} />
-            <Route path="/url-shortner" element={<URLShortner />} />
+            <Route path="/url-shortener" element={<URLShortener />} />
             <Route path="/qr" element={<QRGenerator />} />
 
         </Routes>
