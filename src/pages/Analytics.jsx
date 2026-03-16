@@ -10,14 +10,14 @@ function Analytics() {
   ];
 
   return (
-    <DashboardLayout>
+    <>
       <h1 className="text-2xl font-bold mb-6">Analytics</h1>
       <div className="flex flex-wrap gap-6">
         {analyticsData.map((item, i) => (
           <GlassCard key={i} title={item.title} value={item.value} />
         ))}
       </div>
-    </DashboardLayout>
+    </>
   );
 }
 export default Analytics;

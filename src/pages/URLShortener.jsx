@@ -32,7 +32,7 @@ function URLShortener() {
   };
 
   return (
-    <DashboardLayout>
+    <>
       <h1 className="text-2xl font-bold mb-6">URL Shortener</h1>
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <input
@@ -89,7 +89,7 @@ function URLShortener() {
           </GlassCard>
         ))}
       </div>
-    </DashboardLayout>
+    </>
   );
 }
 export default URLShortener;

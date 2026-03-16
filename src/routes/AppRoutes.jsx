@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DashboardLayout from "../layouts/DashboardLayout";
+
 
 import Landing from "../pages/Landing";
 import Login from "../pages/Login";
@@ -8,7 +10,7 @@ import URLShortener from "../pages/URLShortener";
 import QRGenerator from "../pages/QRGenerator";
 import NotFound from "../pages/NotFound";
 
-import DashboardLayout from "../layouts/DashboardLayout";
+
 
 export default function AppRoutes() {
   return (
@@ -18,9 +20,8 @@ export default function AppRoutes() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
 
-        {/* Dashboard layout wrapper */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<Dashboard />} />
+        <Route element={<DashboardLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="url-shortener" element={<URLShortener />} />
           <Route path="qr" element={<QRGenerator />} />
@@ -28,6 +29,7 @@ export default function AppRoutes() {
 
         <Route path="*" element={<NotFound />} />
 
+      
       </Routes>
     </BrowserRouter>
   );
