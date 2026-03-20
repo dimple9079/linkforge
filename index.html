@@ -1,10 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>linkforge</title>
+    <title>LinkForge | Smart QR Code SaaS</title>
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'system';
+        const dark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <style>
+      html.dark body {
+        background-color: #020617 !important;
+        color: #f8fafc !important;
+      }
+      html.dark .bg-white, 
+      html.dark .bg-slate-50,
+      html.dark .bg-slate-100 {
+        background-color: #0f172a !important;
+        color: #f1f5f9 !important;
+        border-color: #1e293b !important;
+      }
+    </style>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
   <body>
     <div id="root"></div>

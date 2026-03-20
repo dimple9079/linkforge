@@ -1,1 +1,70 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 300ms;
+  }
+
+  /* Force light mode colors when .dark is NOT present */
+  html:not(.dark) body,
+  html:not(.dark) .bg-white,
+  html:not(.dark) .bg-slate-50,
+  html:not(.dark) .bg-slate-100 {
+    background-color: #eeecc2b2 !important;
+    color: #0f172a !important;
+  }
+
+  /* Force dark text for all slate text variants in light mode */
+  html:not(.dark) .text-slate-600,
+  html:not(.dark) .text-slate-500,
+  html:not(.dark) .text-slate-400 {
+    color: #334155 !important; /* slate-700 for better contrast than 400 */
+  }
+
+  html:not(.dark) .text-slate-900,
+  html:not(.dark) .text-slate-800,
+  html:not(.dark) .text-slate-700 {
+    color: #0f172a !important; /* slate-950 */
+  }
+
+  /* Global Dark Mode Fallbacks */
+  .dark {
+    color-scheme: dark;
+  }
+
+  .dark body,
+  html.dark body {
+    background-color: #020617 !important;
+    color: #f8fafc !important;
+  }
+
+  .dark .bg-white,
+  .dark .bg-slate-50,
+  .dark .bg-slate-100 {
+    background-color: #0f172a !important;
+    color: #f1f5f9 !important;
+    border-color: #1e293b !important;
+  }
+
+  .dark .text-slate-900,
+  .dark .text-slate-800,
+  .dark .text-slate-700 {
+    color: #cbd5e1 !important;
+  }
+
+  .dark .border-slate-200,
+  .dark .border-slate-100 {
+    border-color: #1e293b !important;
+  }
+}
